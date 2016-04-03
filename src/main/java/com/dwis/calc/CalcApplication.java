@@ -4,6 +4,7 @@ import com.dwis.calc.auth.SimpleCalcAuthenticator;
 import com.dwis.calc.auth.SimpleCalcAuthorizer;
 import com.dwis.calc.core.User;
 import com.dwis.calc.dao.UserDao;
+import com.dwis.calc.resources.CalculatorResource;
 import com.dwis.calc.resources.HelloResource;
 import com.dwis.calc.resources.UserResource;
 import io.dropwizard.Application;
@@ -52,6 +53,7 @@ public class CalcApplication extends Application<CalcConfiguration> {
         );
         final UserDao dao = new UserDao(hibernate.getSessionFactory());
 
+        environment.jersey().register(new CalculatorResource());
         environment.jersey().register(new UserResource(dao));
         environment.jersey().register(helloResource);
         environment.jersey().register(new AuthDynamicFeature(
