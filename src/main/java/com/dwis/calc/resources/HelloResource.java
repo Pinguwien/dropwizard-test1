@@ -1,16 +1,14 @@
 package com.dwis.calc.resources;
 
 import com.codahale.metrics.annotation.Timed;
-import com.dwis.calc.api.Saying;
 import com.dwis.calc.core.User;
-import com.dwis.calc.dao.UserDao;
-import com.google.common.base.Optional;
+import com.dwis.calc.dto.Saying;
 import io.dropwizard.auth.Auth;
-import io.dropwizard.hibernate.UnitOfWork;
-import io.dropwizard.jersey.params.LongParam;
 
 import javax.annotation.security.RolesAllowed;
-import javax.ws.rs.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.concurrent.atomic.AtomicLong;
 

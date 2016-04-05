@@ -1,7 +1,6 @@
 package com.dwis.calc.resources;
 
 import com.codahale.metrics.annotation.Timed;
-import com.dwis.calc.api.Saying;
 import com.dwis.calc.core.User;
 import com.dwis.calc.dao.UserDao;
 import io.dropwizard.auth.Auth;
